@@ -4,13 +4,14 @@ import library.Book;
 import library.Member;
 import library.Transaction;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class TransactionManager {
-    // TODO: Define a data structure that stores transactions
+    ArrayList <Transaction>transactionArr ;
 
     public TransactionManager() {
-        // TODO: Initialize your data structure here
+        transactionArr = new ArrayList<>();
     }
 
     public Transaction addTransaction(String bookTitle, String memberName, String type) {
@@ -22,12 +23,11 @@ public class TransactionManager {
                 type
         );
 
-        // TODO: Add the transaction to your data structure
+        transactionArr.add(transaction);
         return transaction;
     }
 
     public Transaction getTransactionByIndex(int index) {
-        // TODO:
-        return null;
+        return transactionArr.get(index);
     }
 }

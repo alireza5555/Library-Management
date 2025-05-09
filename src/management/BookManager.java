@@ -1,47 +1,46 @@
 package management;
 
+import datastructures.maps.CustomHashMap;
 import library.Book;
 import library.Member;
 
 public class BookManager {
-    // TODO: Define a data structure that stores ISBNs and their matching Book objects
+    private CustomHashMap<String,Book> bookMap ;
 
     private MemberManager memberManager;
 
     public BookManager(MemberManager memberManager) {
-        // TODO: Initialize your data structure here
+        bookMap = new CustomHashMap<>();
         this.memberManager = memberManager;
     }
 
     public void addBook(Book book) {
-        // TODO: Add the book and its ISBN to your data structure
+        bookMap.put(book.getIsbn(),book);
     }
 
     public Book getBookByIsbn(String isbn) {
-        // TODO
-        return null;
+        return bookMap.get(isbn);
     }
 
     public boolean isBookAvailable(String isbn) {
-        // TODO
-        return false;
+        return bookMap.get(isbn).isAvailable();
     }
 
     public void setBookAvailability(String isbn, boolean available) {
-        // TODO
+        Book temp = getBookByIsbn(isbn);
+        temp.setAvailable(available);
+        bookMap.put(isbn, temp);
     }
 
     public void addToWaitlist(String isbn, String memberId) {
-        // TODO
+        bookMap.get(isbn).addToWaitlist(memberManager.getMember(memberId));
     }
 
     public Member getNextFromWaitlist(String isbn) {
-        // TODO
-        return null;
+        return bookMap.get(isbn).getNextInWaitlist();
     }
 
     public boolean hasWaitlist(String isbn) {
-        // TODO
-        return false;
+        return bookMap.get(isbn).hasWaitlist();
     }
 }

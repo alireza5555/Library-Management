@@ -51,7 +51,8 @@ public class CustomStack<T> implements Queue<T> {
 
     @Override
     public T peek() {
-        return null;
+        if(list.isEmpty()) return null;
+        return list.getFirst();
     }
 
     @Override
