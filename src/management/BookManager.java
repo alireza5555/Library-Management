@@ -23,7 +23,7 @@ public class BookManager {
     }
 
     public boolean isBookAvailable(String isbn) {
-        return bookMap.containsKey(isbn);
+        return bookMap.get(isbn).isAvailable();
     }
 
     public void setBookAvailability(String isbn, boolean available) {

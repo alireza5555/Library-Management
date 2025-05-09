@@ -21,8 +21,8 @@ public class Member {
     }
 
     public Transaction getLastTransaction() {
-        stack.peek();
-        return null;
+       return (Transaction) stack.peek();
+
     }
 
     @Override

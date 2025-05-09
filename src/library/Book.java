@@ -34,7 +34,7 @@ public class Book {
     }
 
     public boolean hasWaitlist() {
-        return queue.isEmpty();
+        return !queue.isEmpty();
     }
 
     @Override

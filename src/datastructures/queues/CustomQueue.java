@@ -16,14 +16,14 @@ public class CustomQueue<T> implements Queue<T> {
 
     @Override
     public boolean add(Object t) {
-        if(list.size() >= size()) throw  new IllegalStateException();
+        if(size() >= max) throw  new IllegalStateException();
         list.addLast((T)t);
         return true;
     }
 
     @Override
     public boolean offer(Object t) {
-        if(list.size() >= size()) return false;
+        if(size() >= max) return false;
         list.addLast((T)t);
         return true;
     }
