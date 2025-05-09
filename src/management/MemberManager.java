@@ -5,7 +5,7 @@ import library.Member;
 import library.Transaction;
 
 public class MemberManager {
-    CustomHashMap<String,Member> memberMap ;
+    private CustomHashMap<String,Member> memberMap ;
 
     public MemberManager() {
         memberMap = new CustomHashMap<>();
