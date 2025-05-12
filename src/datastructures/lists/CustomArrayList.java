@@ -30,8 +30,9 @@ public class CustomArrayList<T> implements List<T> {
 
     @Override
     public T set(int index, T element) {
+        T temp = elements[index];
         elements[index] = element;
-        return element;
+        return temp;
     }
 
     @Override
